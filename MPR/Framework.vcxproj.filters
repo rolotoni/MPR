@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\BasicMath.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Camera.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Core.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Geometry.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Graphics.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Matrix.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SDLWindowSystem.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SDLInput.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Shaders.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Shapes.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\BasicMath.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Camera.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Containers.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Geometry.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Matrix.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Message.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Precompiled.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SDL\SDL.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SDLInput.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SDLWindowSystem.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shaders.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\System.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\KdTree.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BVHTree.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Shapes.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\shaders\phong.fs">
+      <Filter>Data</Filter>
+    </None>
+    <None Include="data\shaders\phong.vs">
+      <Filter>Data</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{8aace153-c2a6-40b2-8a68-eed0ef435512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{b743d637-0874-4c0d-9244-faf7c67db6eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{b25bd73e-4368-443c-96bf-ca5641c333e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
