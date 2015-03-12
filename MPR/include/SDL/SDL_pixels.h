@@ -118,10 +118,10 @@ enum
     ((1 << 31) | ((type) << 24) | ((order) << 20) | ((layout) << 16) | \
      ((bits) << 8) | ((bytes) << 0))
 
-#define SDL_PIXELTYPE(X)	(((X) >> 24) & 0x0F)
-#define SDL_PIXELORDER(X)	(((X) >> 20) & 0x0F)
-#define SDL_PIXELLAYOUT(X)	(((X) >> 16) & 0x0F)
-#define SDL_BITSPERPIXEL(X)	(((X) >> 8) & 0xFF)
+#define SDL_PIXELTYPE(X)  (((X) >> 24) & 0x0F)
+#define SDL_PIXELORDER(X) (((X) >> 20) & 0x0F)
+#define SDL_PIXELLAYOUT(X)  (((X) >> 16) & 0x0F)
+#define SDL_BITSPERPIXEL(X) (((X) >> 8) & 0xFF)
 #define SDL_BYTESPERPIXEL(X) \
     (SDL_ISPIXELFORMAT_FOURCC(X) ? \
         ((((X) == SDL_PIXELFORMAT_YUY2) || \

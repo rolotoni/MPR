@@ -44,12 +44,12 @@ extern "C" {
  *  Synchronization functions which can time out return this value
  *  if they time out.
  */
-#define SDL_MUTEX_TIMEDOUT	1
+#define SDL_MUTEX_TIMEDOUT  1
 
 /**
  *  This is the timeout value which corresponds to never time out.
  */
-#define SDL_MUTEX_MAXWAIT	(~(Uint32)0)
+#define SDL_MUTEX_MAXWAIT (~(Uint32)0)
 
 
 /**
@@ -71,7 +71,7 @@ extern DECLSPEC SDL_mutex *SDLCALL SDL_CreateMutex(void);
  *  
  *  \return 0, or -1 on error.
  */
-#define SDL_LockMutex(m)	SDL_mutexP(m)
+#define SDL_LockMutex(m)  SDL_mutexP(m)
 extern DECLSPEC int SDLCALL SDL_mutexP(SDL_mutex * mutex);
 
 /**
@@ -82,7 +82,7 @@ extern DECLSPEC int SDLCALL SDL_mutexP(SDL_mutex * mutex);
  *  \warning It is an error to unlock a mutex that has not been locked by
  *           the current thread, and doing so results in undefined behavior.
  */
-#define SDL_UnlockMutex(m)	SDL_mutexV(m)
+#define SDL_UnlockMutex(m)  SDL_mutexV(m)
 extern DECLSPEC int SDLCALL SDL_mutexV(SDL_mutex * mutex);
 
 /** 

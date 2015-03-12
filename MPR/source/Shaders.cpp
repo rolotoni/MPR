@@ -24,32 +24,32 @@ namespace Framework
   int Shaders::GetFileLength(const char* filename)
   {
     FILE* file;
-	file = fopen( filename, "rb" );
-	// set the file pointer to end of file
-	//to get file size
+  file = fopen( filename, "rb" );
+  // set the file pointer to end of file
+  //to get file size
     fseek( file, 0, SEEK_END );
     int size = ftell( file );
 
-	fclose(file);
+  fclose(file);
 
-	return size;
+  return size;
   }
   char* Shaders::loadshader(const char* filename)
   {
     int size = GetFileLength(filename);
 
-	std::ifstream infile(filename,std::ifstream::in);
+  std::ifstream infile(filename,std::ifstream::in);
 
     //allocate our shaders memory
-	char* ShaderSource = new char[size];
+  char* ShaderSource = new char[size];
 
     for(unsigned i = 0; infile.good(); ++i)
-	{
-	  ShaderSource[i] = infile.get();
-	  if(infile.eof())
-	    ShaderSource[i] = 0;
-	}
-	  
+  {
+    ShaderSource[i] = infile.get();
+    if(infile.eof())
+      ShaderSource[i] = 0;
+  }
+    
     infile.close();
 
     return ShaderSource;
@@ -78,9 +78,9 @@ namespace Framework
 
       GLchar* compiler_log = new GLchar[compiled];
 
-	  std::cout << "compile_failed_creating_log" << std::endl;
+    std::cout << "compile_failed_creating_log" << std::endl;
       glGetShaderInfoLog(shader, compiled, &slen, compiler_log);
-	  std::cout << "compiler_log:\n" << static_cast<char *>(compiler_log) << std::endl;
+    std::cout << "compiler_log:\n" << static_cast<char *>(compiler_log) << std::endl;
       delete [] compiler_log;
     }
 
@@ -97,14 +97,14 @@ namespace Framework
       std::cout << "link successful" << std::endl;    
     else 
     {
-	  GLsizei slen = 0;
+    GLsizei slen = 0;
       glGetProgramiv(program, GL_INFO_LOG_LENGTH , &linked);       
 
       GLchar* linker_log = new GLchar[linked];
 
-	  std::cout << "link_failed_creating_log" << std::endl;
+    std::cout << "link_failed_creating_log" << std::endl;
       glGetProgramInfoLog(program, linked, &slen, linker_log);
-	  std::cout << "link_log:\n" << static_cast<char *>(linker_log) << std::endl;
+    std::cout << "link_log:\n" << static_cast<char *>(linker_log) << std::endl;
       delete [] linker_log;
     }
 
@@ -112,39 +112,39 @@ namespace Framework
   GLuint Shaders::InitShaders(const char* vs_filename, const char* fs_filename)
   {
     //load both of our shaders from a file
-	fShaderSource = loadshader(fs_filename);
-	vShaderSource = loadshader(vs_filename);
+  fShaderSource = loadshader(fs_filename);
+  vShaderSource = loadshader(vs_filename);
 
-	//create the shaders and our program
-	void* p =  glCreateShader;
-	if(!p) __asm int 3
+  //create the shaders and our program
+  void* p =  glCreateShader;
+  if(!p) __asm int 3
     fShaderObject = glCreateShader(GL_FRAGMENT_SHADER);
-	vShaderObject = glCreateShader(GL_VERTEX_SHADER);
+  vShaderObject = glCreateShader(GL_VERTEX_SHADER);
     GLuint Program = glCreateProgram();
 
-	const char* fss = const_cast<const char*>(fShaderSource);
-	const char* vss = const_cast<const char*>(vShaderSource);
+  const char* fss = const_cast<const char*>(fShaderSource);
+  const char* vss = const_cast<const char*>(vShaderSource);
 
     glShaderSource(fShaderObject, 1, &fss, NULL);
-	glShaderSource(vShaderObject, 1, &vss, NULL);
+  glShaderSource(vShaderObject, 1, &vss, NULL);
     
     //compile the shaders
-	CompileShader(fShaderObject);
-	CompileShader(vShaderObject);
+  CompileShader(fShaderObject);
+  CompileShader(vShaderObject);
 
 
-	//attach the shaders to our program	
-	glAttachShader(Program, vShaderObject);
+  //attach the shaders to our program 
+  glAttachShader(Program, vShaderObject);
     glAttachShader(Program, fShaderObject);
 
     //link the shaders
-	LinkShader(Program);
+  LinkShader(Program);
 
     //de-allocate memory for shaders
-	unloadshader(fShaderSource);
+  unloadshader(fShaderSource);
     unloadshader(vShaderSource);
 
-	return Program;
+  return Program;
   }
 
 }//namespace

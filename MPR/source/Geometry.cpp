@@ -217,18 +217,18 @@ namespace Framework
   float Distance(const Seg3D & seg0, const Seg3D & seg1)
   {
     Vec3 c1,c2;
-	Vec3 d1 = seg0.p2 - seg0.p1; // Direction vector of segment S1
-	Vec3 d2 = seg1.p2 - seg1.p1; // Direction vector of segment S2
+  Vec3 d1 = seg0.p2 - seg0.p1; // Direction vector of segment S1
+  Vec3 d2 = seg1.p2 - seg1.p1; // Direction vector of segment S2
     Vec3 r  = seg0.p1 - seg1.p1;
-	float a = d1.MagSqrd(); // Squared length of segment S1, always nonnegative
-	float e = d2.MagSqrd(); // Squared length of segment S2, always nonnegative
+  float a = d1.MagSqrd(); // Squared length of segment S1, always nonnegative
+  float e = d2.MagSqrd(); // Squared length of segment S2, always nonnegative
     float f = d2.Dot(r);
 
-	float s,t;
+  float s,t;
 
     // Check if either or both segments degenerate into points
     if (a <= Epsilon && e <= Epsilon)
-	{
+  {
         // Both segments degenerate into points
         s = t = 0.0f;
         c1 = seg0.p1;
@@ -236,14 +236,14 @@ namespace Framework
         return (c1 - c2).Dot(c1 - c2);
     }
     if (a <= Epsilon)
-	{
+  {
         // First segment degenerates into a point
         s = 0.0f;
         t = f / e; // s = 0 => t = (b*s + f) / e = f / e
         t = Clamp(t, 0.0f, 1.0f);
     } 
-	else 
-	{
+  else 
+  {
       float c = d1.Dot(r);
       if (e <= Epsilon)
       {
@@ -251,8 +251,8 @@ namespace Framework
         t = 0.0f;
         s = Clamp(-c / a, 0.0f, 1.0f); // t = 0 => s = (b*t - c) / a = -c / a
       } 
-	  else
-	  {
+    else
+    {
         // The general nondegenerate case starts here
         float b = d1.Dot(d2);
         float denom = a*e-b*b; // Always nonnegative
@@ -260,11 +260,11 @@ namespace Framework
         // If segments not parallel, compute closest point on L1 to L2, and
         // clamp to segment S1. Else pick arbitrary s (here 0)
         if (denom != 0.0f)
-	    {
+      {
           s = Clamp((b*f - c*e) / denom, 0.0f, 1.0f);
         } 
-	    else 
-	      s = 0.0f;
+      else 
+        s = 0.0f;
 
         // Compute point on L2 closest to S1(s) using
         // t = Dot((P1+D1*s)-P2,D2) / Dot(D2,D2) = (b*s + f) / e
@@ -274,17 +274,17 @@ namespace Framework
         // of t using s = Dot((P2+D2*t)-P1,D1) / Dot(D1,D1)= (t*b - c) / a
         // and clamp s to [0, 1]
         if (t < 0.0f)
-	    {
+      {
           t = 0.0f;
           s = Clamp(-c / a, 0.0f, 1.0f);
         } 
-	    else if (t > 1.0f)
-	    {
+      else if (t > 1.0f)
+      {
           t = 1.0f;
           s = Clamp((b - c) / a, 0.0f, 1.0f);
         }
-	  }
-	}
+    }
+  }
 
     c1 = seg0.p1 + d1 * s;
     c2 = seg1.p1 + d2 * t;
@@ -306,7 +306,7 @@ namespace Framework
     if(v.Dot(d) * v.Dot(d) == v.MagSqrd() * v.MagSqrd())
       return true;
     if(-Epsilon_sqrd <= 1 - (d_sqrd / (v_msqrd * l_msqrd)) && 
-	                            1 - (d_sqrd / (v_msqrd * l_msqrd)) <= Epsilon_sqrd)
+                              1 - (d_sqrd / (v_msqrd * l_msqrd)) <= Epsilon_sqrd)
       return true;
 
     return false; 
@@ -398,7 +398,7 @@ namespace Framework
     aabb.MinMax(&max,&min);
 
     return min.x <= p.x && p.x <= max.x && min.y <= p.y
-	                  && p.y <= max.y && min.z <= p.z && p.z <= max.z;
+                    && p.y <= max.y && min.z <= p.z && p.z <= max.z;
   }
 
   /******************************************************************************/
@@ -418,7 +418,7 @@ namespace Framework
   /******************************************************************************/
   bool Intersect(const Seg3D & segment, const Plane3D & plane, Vec3 *ipOut, float *pT)
   {   
-	
+  
     if(!pT || !ipOut)
       return false;
 
@@ -434,7 +434,7 @@ namespace Framework
     if(0.0f <= *pT && *pT <= 1.0f)
     {
       *ipOut = segment.p1 + *pT * s;
-	  return true;
+    return true;
     }
 
     return false;
@@ -454,7 +454,7 @@ namespace Framework
     //if so intersection is true
     if(Intersect(segment,plane,ipOut,pT))
       if(Contains(*ipOut,triangle))
-	    return true;
+      return true;
   
     return false;
   }
@@ -477,7 +477,7 @@ namespace Framework
     if(0.0f <= *pT)
     {
       *ipOut = ray.origin + *pT * s;
-	  return true;
+    return true;
     }
 
     return false;
@@ -497,7 +497,7 @@ namespace Framework
     //if so intersection is true
     if(Intersect(ray,plane,ipOut,pT))
       if(Contains(*ipOut,triangle))
-	    return true;
+      return true;
   
     return false;
   }
@@ -549,76 +549,76 @@ namespace Framework
     {
       //ray is parallel to slab
       if(aabbMax.x <= ray.origin.x || ray.origin.x <= aabbMin.x)
-	    return false;
+      return false;
     }
     else
     {
       float ood = 1.0f / v.x;
-	  float t1 = (aabbMin.x - ray.origin.x) * ood;
-	  float t2 = (aabbMax.x - ray.origin.x) * ood;
+    float t1 = (aabbMin.x - ray.origin.x) * ood;
+    float t2 = (aabbMax.x - ray.origin.x) * ood;
 
-	  if(t1 > t2)
-	  {
-	    float temp = t1;
-	    t1 = t2;
-	    t2 = temp;
-	  }
+    if(t1 > t2)
+    {
+      float temp = t1;
+      t1 = t2;
+      t2 = temp;
+    }
 
       t_entry = max(t_entry, t1);
-	  t_exit = min(t_exit, t2);
+    t_exit = min(t_exit, t2);
 
-	  if(t_exit < t_entry)
-	    return false;
+    if(t_exit < t_entry)
+      return false;
     }
     //outside y-slab do nothing
     if(-Epsilon <= v.y && v.y <= Epsilon)
     {
       //ray is parallel to slab
       if(aabbMax.y <= ray.origin.y || ray.origin.y <= aabbMin.y)
-	    return false;
+      return false;
     }
     else
     {
       float ood = 1.0f / v.y;
-	  float t1 = (aabbMin.y - ray.origin.y) * ood;
-	  float t2 = (aabbMax.y - ray.origin.y) * ood;
+    float t1 = (aabbMin.y - ray.origin.y) * ood;
+    float t2 = (aabbMax.y - ray.origin.y) * ood;
 
-	  if(t1 > t2)
-	  {
-	    float temp = t1;
-	    t1 = t2;
-	    t2 = temp;
-	  }
+    if(t1 > t2)
+    {
+      float temp = t1;
+      t1 = t2;
+      t2 = temp;
+    }
 
       t_entry = max(t_entry, t1);
-	  t_exit = min(t_exit, t2);
+    t_exit = min(t_exit, t2);
 
-	  if(t_exit < t_entry)
-	    return false;
+    if(t_exit < t_entry)
+      return false;
     }
     //outside z-slab do nothing
     if(-Epsilon <= v.z && v.z <= Epsilon)
     {
       //ray is parallel to slab
       if(aabbMax.z <= ray.origin.z || ray.origin.z <= aabbMin.z)
-	    return false;
+      return false;
     }
     else
     {
       float ood = 1.0f / v.z;
-	  float t1 = (aabbMin.z - ray.origin.z) * ood;
-	  float t2 = (aabbMax.z - ray.origin.z) * ood;
+    float t1 = (aabbMin.z - ray.origin.z) * ood;
+    float t2 = (aabbMax.z - ray.origin.z) * ood;
       if(t1 > t2)
-	  {
-	    float temp = t1;
-	    t1 = t2;
-	    t2 = temp;
-	  }
+    {
+      float temp = t1;
+      t1 = t2;
+      t2 = temp;
+    }
       t_entry = max(t_entry, t1);
-	  t_exit = min(t_exit, t2);
+    t_exit = min(t_exit, t2);
 
-	  if(t_exit < t_entry)
-	    return false;
+    if(t_exit < t_entry)
+      return false;
     }
 
     *pT = t_entry;
@@ -634,7 +634,7 @@ namespace Framework
 
     if(s.Magnitude() - (sphere0.radius + sphere1.radius) <= Epsilon)
       return true;
-	                                                                                                     
+                                                                                                       
     return false;
   }
 
@@ -660,15 +660,15 @@ namespace Framework
     if(Intersect(e0, triangle1, &q, &t))
       return true;
     else if(Intersect(e1, triangle1, &q, &t))
-	  return true;
+    return true;
     else if(Intersect(e2, triangle1, &q, &t))
-	  return true;
+    return true;
     else if(Intersect(e3, triangle0, &q, &t))
       return true;
     else if(Intersect(e4, triangle0, &q, &t))
-	  return true;
+    return true;
     else if(Intersect(e5, triangle0, &q, &t))
-	  return true;
+    return true;
     else
       return false;
   }
@@ -708,10 +708,10 @@ namespace Framework
   bool Parallel(const Line3D & line0, const Line3D & line1)
   { 
     Vec3 norm0;
-	norm0 = line0.dir;
+  norm0 = line0.dir;
     norm0.Normalize();
     Vec3 norm1;
-	norm1 = line1.dir;
+  norm1 = line1.dir;
     norm1.Normalize();
 
     return norm0 == norm1;

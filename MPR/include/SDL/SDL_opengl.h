@@ -62,7 +62,7 @@
  *  If you don't want this version included, simply define ::NO_SDL_GLEXT.
  *  
  *  The latest version is available from:
- *  	http://www.opengl.org/registry/
+ *    http://www.opengl.org/registry/
  */
 
 /**

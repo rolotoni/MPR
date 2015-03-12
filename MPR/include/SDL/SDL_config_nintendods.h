@@ -49,74 +49,74 @@ typedef unsigned __PTRDIFF_TYPE__ uintptr_t;
 #define SIZEOF_VOIDP 4
 
 /* Useful headers */
-#define HAVE_SYS_TYPES_H	1
-#define HAVE_STDIO_H	1
-#define STDC_HEADERS	1
-#define HAVE_STRING_H	1
-#define HAVE_CTYPE_H	1
+#define HAVE_SYS_TYPES_H  1
+#define HAVE_STDIO_H  1
+#define STDC_HEADERS  1
+#define HAVE_STRING_H 1
+#define HAVE_CTYPE_H  1
 
 /* C library functions */
-#define HAVE_MALLOC	1
-#define HAVE_CALLOC	1
-#define HAVE_REALLOC	1
-#define HAVE_FREE	1
-#define HAVE_ALLOCA	1
-#define HAVE_GETENV	1
-#define HAVE_SETENV	1
-#define HAVE_PUTENV	1
-#define HAVE_QSORT	1
-#define HAVE_ABS	1
-#define HAVE_BCOPY	1
-#define HAVE_MEMSET	1
-#define HAVE_MEMCPY	1
-#define HAVE_MEMMOVE	1
-#define HAVE_MEMCMP	1
-#define HAVE_STRLEN	1
-#define HAVE_STRDUP	1
-#define HAVE_INDEX	1
-#define HAVE_RINDEX	1
-#define HAVE_STRCHR	1
-#define HAVE_STRRCHR	1
-#define HAVE_STRSTR	1
-#define HAVE_STRTOL	1
-#define HAVE_STRTOD	1
-#define HAVE_ATOI	1
-#define HAVE_ATOF	1
-#define HAVE_STRCMP	1
-#define HAVE_STRNCMP	1
-#define HAVE_STRICMP	1
-#define HAVE_STRCASECMP	1
-#define HAVE_SSCANF	1
-#define HAVE_SNPRINTF	1
-#define HAVE_VSNPRINTF	1
+#define HAVE_MALLOC 1
+#define HAVE_CALLOC 1
+#define HAVE_REALLOC  1
+#define HAVE_FREE 1
+#define HAVE_ALLOCA 1
+#define HAVE_GETENV 1
+#define HAVE_SETENV 1
+#define HAVE_PUTENV 1
+#define HAVE_QSORT  1
+#define HAVE_ABS  1
+#define HAVE_BCOPY  1
+#define HAVE_MEMSET 1
+#define HAVE_MEMCPY 1
+#define HAVE_MEMMOVE  1
+#define HAVE_MEMCMP 1
+#define HAVE_STRLEN 1
+#define HAVE_STRDUP 1
+#define HAVE_INDEX  1
+#define HAVE_RINDEX 1
+#define HAVE_STRCHR 1
+#define HAVE_STRRCHR  1
+#define HAVE_STRSTR 1
+#define HAVE_STRTOL 1
+#define HAVE_STRTOD 1
+#define HAVE_ATOI 1
+#define HAVE_ATOF 1
+#define HAVE_STRCMP 1
+#define HAVE_STRNCMP  1
+#define HAVE_STRICMP  1
+#define HAVE_STRCASECMP 1
+#define HAVE_SSCANF 1
+#define HAVE_SNPRINTF 1
+#define HAVE_VSNPRINTF  1
 
 /* DS isn't that sophisticated */
 #define LACKS_SYS_MMAN_H 1
 
 /* Enable various audio drivers */
-#define SDL_AUDIO_DRIVER_NDS	1
-/*#define SDL_AUDIO_DRIVER_DUMMY	1 TODO: uncomment this later*/
+#define SDL_AUDIO_DRIVER_NDS  1
+/*#define SDL_AUDIO_DRIVER_DUMMY  1 TODO: uncomment this later*/
 
 /* Enable various input drivers */
-#define SDL_JOYSTICK_NDS	1
-/*#define SDL_JOYSTICK_DUMMY	1 TODO: uncomment this later*/
+#define SDL_JOYSTICK_NDS  1
+/*#define SDL_JOYSTICK_DUMMY  1 TODO: uncomment this later*/
 
 /* DS has no dynamic linking afaik */
-#define SDL_LOADSO_DISABLED	1
+#define SDL_LOADSO_DISABLED 1
 
 /* Enable various threading systems */
-/*#define SDL_THREAD_NDS	1*/
-#define SDL_THREADS_DISABLED	1
+/*#define SDL_THREAD_NDS  1*/
+#define SDL_THREADS_DISABLED  1
 
 /* Enable various timer systems */
-#define SDL_TIMER_NDS	1
+#define SDL_TIMER_NDS 1
 
 /* Enable various video drivers */
-#define SDL_VIDEO_DRIVER_NDS	1
+#define SDL_VIDEO_DRIVER_NDS  1
 #ifdef USE_HW_RENDERER
-#define SDL_VIDEO_RENDER_NDS	1
+#define SDL_VIDEO_RENDER_NDS  1
 #else
-#define SDL_VIDEO_RENDER_NDS	0
+#define SDL_VIDEO_RENDER_NDS  0
 #endif
 
 /* Enable system power support */

@@ -90,17 +90,17 @@ extern "C" {
 #define SDL_HWACCEL         0x08000000  /**< \note Not used */
 /*@}*//*Surface flags*/
 
-#define SDL_APPMOUSEFOCUS	0x01
-#define SDL_APPINPUTFOCUS	0x02
-#define SDL_APPACTIVE		0x04
+#define SDL_APPMOUSEFOCUS 0x01
+#define SDL_APPINPUTFOCUS 0x02
+#define SDL_APPACTIVE   0x04
 
 #define SDL_LOGPAL 0x01
 #define SDL_PHYSPAL 0x02
 
-#define SDL_ACTIVEEVENT	SDL_EVENT_COMPAT1
-#define SDL_VIDEORESIZE	SDL_EVENT_COMPAT2
-#define SDL_VIDEOEXPOSE	SDL_EVENT_COMPAT3
-#define SDL_ACTIVEEVENTMASK	SDL_ACTIVEEVENT, SDL_ACTIVEEVENT
+#define SDL_ACTIVEEVENT SDL_EVENT_COMPAT1
+#define SDL_VIDEORESIZE SDL_EVENT_COMPAT2
+#define SDL_VIDEOEXPOSE SDL_EVENT_COMPAT3
+#define SDL_ACTIVEEVENTMASK SDL_ACTIVEEVENT, SDL_ACTIVEEVENT
 #define SDL_VIDEORESIZEMASK SDL_VIDEORESIZE, SDL_VIDEORESIZE
 #define SDL_VIDEOEXPOSEMASK SDL_VIDEOEXPOSE, SDL_VIDEOEXPOSE
 #define SDL_WINDOWEVENTMASK SDL_WINDOWEVENT, SDL_WINDOWEVENT
@@ -126,11 +126,11 @@ extern "C" {
 #define SDL_PROXIMITYOUTMASK SDL_PROXIMITYOUT, SDL_PROXIMITYOUT
 #define SDL_ALLEVENTS SDL_FIRSTEVENT, SDL_LASTEVENT
 
-#define SDL_BUTTON_WHEELUP	4
-#define SDL_BUTTON_WHEELDOWN	5
+#define SDL_BUTTON_WHEELUP  4
+#define SDL_BUTTON_WHEELDOWN  5
 
-#define SDL_DEFAULT_REPEAT_DELAY	500
-#define SDL_DEFAULT_REPEAT_INTERVAL	30
+#define SDL_DEFAULT_REPEAT_DELAY  500
+#define SDL_DEFAULT_REPEAT_INTERVAL 30
 
 typedef struct SDL_VideoInfo
 {
@@ -215,10 +215,10 @@ struct SDL_SysWMinfo;
  */
 /*@{*/
 
-#define SDL_keysym		SDL_Keysym
-#define SDL_KeySym		SDL_Keysym
-#define SDL_scancode	SDL_Scancode
-#define SDL_ScanCode	SDL_Scancode
+#define SDL_keysym    SDL_Keysym
+#define SDL_KeySym    SDL_Keysym
+#define SDL_scancode  SDL_Scancode
+#define SDL_ScanCode  SDL_Scancode
 #define SDLKey          SDL_Keycode
 #define SDLMod          SDL_Keymod
 
@@ -343,8 +343,8 @@ typedef SDL_Window* SDL_WindowID;
 #define SDL_KillThread(X)
 
 /* The timeslice and timer resolution are no longer relevant */
-#define SDL_TIMESLICE		10
-#define TIMER_RESOLUTION	10
+#define SDL_TIMESLICE   10
+#define TIMER_RESOLUTION  10
 
 typedef Uint32 (SDLCALL * SDL_OldTimerCallback) (Uint32 interval);
 extern DECLSPEC int SDLCALL SDL_SetTimer(Uint32 interval, SDL_OldTimerCallback callback);

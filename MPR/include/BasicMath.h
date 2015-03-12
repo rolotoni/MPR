@@ -21,7 +21,7 @@ namespace Framework
   template <typename T>
   inline T Clamp(T value, const T mn, const T mx)
   {
-	if(value < mn)
+  if(value < mn)
       value = mn;
     else if(value > mx)
       value = mx;
@@ -43,8 +43,8 @@ class Vec2
   public:
     // default
     Vec2(float i = 0.0f, float j = 0.0f);
-	Vec2(const Vec2 & p1, const Vec2 & p2);
-	Vec2(Vec2 &rhs);
+  Vec2(const Vec2 & p1, const Vec2 & p2);
+  Vec2(Vec2 &rhs);
 
     /// queries: ///
     // ||this|| ?= 0
@@ -97,7 +97,7 @@ class Vec2
     Vec2 operator*(const float scalar) const;
     Vec2 operator/(const float scalar) const;
 
-	friend Vec2 operator*(float scalar, const Vec2 & rhs);
+  friend Vec2 operator*(float scalar, const Vec2 & rhs);
     friend Vec2 operator/(float scalar, const Vec2 & rhs);
 
   public:
@@ -112,7 +112,7 @@ class Vec3
 {
   public:
     Vec3(float i = 0.0f, float j = 0.0f, float k = 0.0f);
-	Vec3(const Vec3 & p1, const Vec3 & p2);
+  Vec3(const Vec3 & p1, const Vec3 & p2);
     Vec3(const Vec3& rhs);
 
     /// queries: ///
@@ -124,10 +124,10 @@ class Vec3
     void Set(float xyzValue);
     void Set(float i, float j, float k);
     void Negate(void);
-	Vec3 Neg(void);
+  Vec3 Neg(void);
     void Inverse(void);
     void Normalize(void);
-	void Norm(Vec3 *vOut) const;
+  void Norm(Vec3 *vOut) const;
     void Multiply(const Vec3 & v);
 
     // ||this||
@@ -151,15 +151,15 @@ class Vec3
     // epsilon comparisons
     bool operator==(const Vec3 & v) const;
     bool operator!=(const Vec3 & v) const;
-	bool operator<(const Vec3 & v) const;
-	bool operator>(const Vec3 & v) const;
+  bool operator<(const Vec3 & v) const;
+  bool operator>(const Vec3 & v) const;
     // binary operations
     Vec3 operator+(const Vec3 & v) const;
     Vec3 operator-(const Vec3 & v) const;
     Vec3 operator*(const float scalar) const;
     Vec3 operator/(const float scalar) const;
 
-	friend Vec3 operator*(float scalar, const Vec3 & rhs);
+  friend Vec3 operator*(float scalar, const Vec3 & rhs);
     friend Vec3 operator/(float scalar, const Vec3 & rhs);
 
   public:
@@ -174,7 +174,7 @@ class Vec4
 {
   public:
     Vec4(float i = 0.0f, float j = 0.0f, float k = 0.0f, float f = 0.0f);
-	Vec4(const Vec4 & p1, const Vec4 & p2);
+  Vec4(const Vec4 & p1, const Vec4 & p2);
     Vec4(const Vec4& rhs);
 
     /// queries: ///
@@ -188,7 +188,7 @@ class Vec4
     void Negate(void);
     void Inverse(void);
     void Normalize(void);
-	void Norm(Vec4 *vOut) const;
+  void Norm(Vec4 *vOut) const;
     void Multiply(const Vec4 & v);
 
     // ||this||
@@ -215,7 +215,7 @@ class Vec4
     Vec4 operator*(const float scalar) const;
     Vec4 operator/(const float scalar) const;
 
-	friend Vec4 operator*(float scalar, const Vec4 & rhs);
+  friend Vec4 operator*(float scalar, const Vec4 & rhs);
     friend Vec4 operator/(float scalar, const Vec4 & rhs);
 
   public:
@@ -247,8 +247,8 @@ struct Seg3D
 struct Ray3D
 {
   public:
-	Ray3D(void);
-	Ray3D(Vec3 o, Vec3 d);
+  Ray3D(void);
+  Ray3D(Vec3 o, Vec3 d);
     bool operator==(const Ray3D & rhs);
 
     void Set(const Vec3 & point, const Vec3 & direction);
@@ -264,8 +264,8 @@ struct Ray3D
 struct Line3D
 {
   public:
-	Line3D(void);
-	Line3D(Vec3 p, Vec3 d);
+  Line3D(void);
+  Line3D(Vec3 p, Vec3 d);
     bool operator==(const Line3D & rhs);
 
     void Set(const Vec3 & point, const Vec3 & direction);
@@ -307,7 +307,7 @@ struct Triangle
     void Set(const Vec3 & v0, const Vec3 & v1, const Vec3 & v2);
 
   public:
-	Vec4 color;
+  Vec4 color;
     Vec3 p0;
     Vec3 p1;
     Vec3 p2;
@@ -337,7 +337,7 @@ struct AABB
 
     void Set(const Vec3 & r, const Vec3 & c);
     void MinMax(Vec3 *minOut, Vec3 *maxOut) const;
-	Vec3 GetVertex(int point);
+  Vec3 GetVertex(int point);
 
   public:
     Vec3 radii;
@@ -351,7 +351,7 @@ struct Portal
 {
   public:
     Portal(void);
-	void DrawPortal(void);
+  void DrawPortal(void);
 
   public:
     Vec3 center,p1,p2,p3;

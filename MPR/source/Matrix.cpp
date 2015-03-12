@@ -15,9 +15,9 @@ namespace Framework
 {
   Vec3 Mtx44MultPoint(Vec3 pt, Mtx44 Mtx)
   {
-	Vec4 temp(pt.x,pt.y, pt.z,1);
-	temp = Mtx44MultPoint(temp,Mtx);
-	return Vec3(temp.x,temp.y,temp.z);
+  Vec4 temp(pt.x,pt.y, pt.z,1);
+  temp = Mtx44MultPoint(temp,Mtx);
+  return Vec3(temp.x,temp.y,temp.z);
 
   }
 
@@ -25,12 +25,12 @@ namespace Framework
   {
     Vec4 new_point;
 
-	new_point.x = ((Mtx.m[0][0] * pt.x) + (Mtx.m[0][1] * pt.y) + (Mtx.m[0][2] * pt.z) + (Mtx.m[0][3] * pt.w));
-	new_point.y = ((Mtx.m[1][0] * pt.x) + (Mtx.m[1][1] * pt.y) + (Mtx.m[1][2] * pt.z) + (Mtx.m[1][3] * pt.w));
-	new_point.z = ((Mtx.m[2][0] * pt.x) + (Mtx.m[2][1] * pt.y) + (Mtx.m[2][2] * pt.z) + (Mtx.m[2][3] * pt.w));
-	new_point.w = ((Mtx.m[3][0] * pt.x) + (Mtx.m[3][1] * pt.y) + (Mtx.m[3][2] * pt.z) + (Mtx.m[3][3] * pt.w));
-	
-	return new_point;
+  new_point.x = ((Mtx.m[0][0] * pt.x) + (Mtx.m[0][1] * pt.y) + (Mtx.m[0][2] * pt.z) + (Mtx.m[0][3] * pt.w));
+  new_point.y = ((Mtx.m[1][0] * pt.x) + (Mtx.m[1][1] * pt.y) + (Mtx.m[1][2] * pt.z) + (Mtx.m[1][3] * pt.w));
+  new_point.z = ((Mtx.m[2][0] * pt.x) + (Mtx.m[2][1] * pt.y) + (Mtx.m[2][2] * pt.z) + (Mtx.m[2][3] * pt.w));
+  new_point.w = ((Mtx.m[3][0] * pt.x) + (Mtx.m[3][1] * pt.y) + (Mtx.m[3][2] * pt.z) + (Mtx.m[3][3] * pt.w));
+  
+  return new_point;
   }
 
 
@@ -99,22 +99,22 @@ namespace Framework
   void Mtx44Identity(Mtx44 *pResult)
   {
 
-	  int pos1;
-	  int pos2;
-	  /*matrix size*/
+    int pos1;
+    int pos2;
+    /*matrix size*/
       int row = 4;
-	  int col = 4;
+    int col = 4;
 
-	  for(pos2 = 0; pos2 < row; pos2++)
-	  {
+    for(pos2 = 0; pos2 < row; pos2++)
+    {
          for(pos1 = 0; pos1 < col; pos1++)
-		 {
-		   if(pos1 == pos2)
-	        pResult->m[pos1][pos2] = 1;
-		   else
-		    pResult->m[pos1][pos2] = 0;
-		 }
-	  }
+     {
+       if(pos1 == pos2)
+          pResult->m[pos1][pos2] = 1;
+       else
+        pResult->m[pos1][pos2] = 0;
+     }
+    }
 
   }
 
@@ -129,17 +129,17 @@ namespace Framework
 
     for(pos2 = 0; pos2 < 4; pos2++)
        for(pos1 = 0; pos1 < 4; pos1++)
-	     temp.m[pos1][pos2] = 0;
+       temp.m[pos1][pos2] = 0;
    
-	
+  
      for(i = 0; i < 4; i++)
        for(pos2 = 0; pos2 < 4; pos2++)
          for(pos1 = 0; pos1 < 4; pos1++)
-	       temp.m[i][pos2] += pMtx0->m[i][pos1] * pMtx1->m[pos1][pos2];
+         temp.m[i][pos2] += pMtx0->m[i][pos1] * pMtx1->m[pos1][pos2];
 
      for(pos2 = 0; pos2 < 4; pos2++)
        for(pos1 = 0; pos1 < 4; pos1++)
-	     pResult->m[pos1][pos2] = temp.m[pos1][pos2];
+       pResult->m[pos1][pos2] = temp.m[pos1][pos2];
 
 
   }
@@ -153,12 +153,12 @@ namespace Framework
 
     for(pos2 = 0; pos2 < 4; pos2++)
       for(pos1 = 0; pos1 < 4; pos1++)
-	    temp.m[pos1][pos2] = pMtx0->m[pos1][pos2] + pMtx1->m[pos1][pos2];
+      temp.m[pos1][pos2] = pMtx0->m[pos1][pos2] + pMtx1->m[pos1][pos2];
 
 
     for(pos2 = 0; pos2 < 4; pos2++)
       for(pos1 = 0; pos1 < 4; pos1++)
-	    pResult->m[pos1][pos2] = temp.m[pos1][pos2];
+      pResult->m[pos1][pos2] = temp.m[pos1][pos2];
 
 
   }
@@ -168,30 +168,30 @@ namespace Framework
   void Mtx44Perspective(Mtx44 *pResult, float focal_d)
   {
 
-	  int pos1;
-	  int pos2;
-	  /*matrix size*/
+    int pos1;
+    int pos2;
+    /*matrix size*/
       int row = 4;
-	  int col = 4;
+    int col = 4;
 
-	  for(pos2 = 0; pos2 < row; pos2++)
-	  {
+    for(pos2 = 0; pos2 < row; pos2++)
+    {
          for(pos1 = 0; pos1 < col; pos1++)
-		 {
-		   if(pos1 == pos2)
-		   {
-		     if(pos1 == row - 1)
+     {
+       if(pos1 == pos2)
+       {
+         if(pos1 == row - 1)
                pResult->m[pos1][pos2] = 0;
-			 else
-	           pResult->m[pos1][pos2] = focal_d;
-		   }
-		   else
-		    pResult->m[pos1][pos2] = 0;
-		 }
-	  }
+       else
+             pResult->m[pos1][pos2] = focal_d;
+       }
+       else
+        pResult->m[pos1][pos2] = 0;
+     }
+    }
 
-	  //what axis are we projecting onto
-	  pResult->m[3][2] = -1; //-z
+    //what axis are we projecting onto
+    pResult->m[3][2] = -1; //-z
 
        
   }
@@ -200,7 +200,7 @@ namespace Framework
   {
     Mtx44 m;
 
-	angle *= DEG_TO_RAD;
+  angle *= DEG_TO_RAD;
 
     m.m[0][0] = cos(angle) + (1 - cos(angle)) * n.x * n.x;
     m.m[0][1] = -sin(angle) * n.z + (1 - cos(angle)) * n.x * n.y;
@@ -228,28 +228,28 @@ namespace Framework
 
   void Mtx44Transpose(Mtx44 *pResult, Mtx44 *pMtx0)
   {
-	Mtx44 m;
-	//make copy of pMtx0 in case result is itself
-	for(int i = 0; i < 4; ++i)
-	  for(int j = 0; j < 4; ++j)
-	    m.m[i][j] = pMtx0->m[i][j];
+  Mtx44 m;
+  //make copy of pMtx0 in case result is itself
+  for(int i = 0; i < 4; ++i)
+    for(int j = 0; j < 4; ++j)
+      m.m[i][j] = pMtx0->m[i][j];
 
-	for(int i = 0; i < 4; ++i)
-	  for(int j = 0; j < 4; ++j)
-	    pResult->m[i][j] = m.m[j][i];
+  for(int i = 0; i < 4; ++i)
+    for(int j = 0; j < 4; ++j)
+      pResult->m[i][j] = m.m[j][i];
   }
 
   void Mtx44ToArray(float a[16], Mtx44 *In)
   {
     for(int i = 0; i < 4; ++i)
-	  for(int j = 0; j < 4; ++j)
+    for(int j = 0; j < 4; ++j)
         a[(4 * j) + i] = In->m[i][j];  
   }
 
   void ArrayToMtx44(float* a, Mtx44 *pResult)
   {
     for(int i = 0; i < 4; ++i)
-	  for(int j = 0; j < 4; ++j)
+    for(int j = 0; j < 4; ++j)
         pResult->m[i][j] = a[(4 * j) + i]; 
   }
 
@@ -269,12 +269,12 @@ namespace Framework
   {
     float det;
     int i;
-	float v[16], ar[16];
+  float v[16], ar[16];
 
-	Mtx44ToArray(v, pMtx0);
-	
+  Mtx44ToArray(v, pMtx0);
+  
 
-	ar[0] = v[5]  * v[10] * v[15] - 
+  ar[0] = v[5]  * v[10] * v[15] - 
              v[5]  * v[11] * v[14] - 
              v[9]  * v[6]  * v[15] + 
              v[9]  * v[7]  * v[14] +
@@ -388,7 +388,7 @@ namespace Framework
 
     det = v[0] * ar[0] + v[1] * ar[4] + v[2] * ar[8] + v[3] * ar[12];
 
-	//fail
+  //fail
     //if (det == 0)
     //{
     //}

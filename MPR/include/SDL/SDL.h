@@ -52,19 +52,19 @@
  *  The header files and test programs are well commented and always up to date.
  *  More documentation is available in HTML format in "docs/index.html", and
  *  a documentation wiki is available online at:
- *  	http://www.libsdl.org/cgi/docwiki.cgi
+ *    http://www.libsdl.org/cgi/docwiki.cgi
  *  
  *  The test programs in the "test" subdirectory are in the public domain.
  *  
  *  Frequently asked questions are answered online:
- *  	http://www.libsdl.org/faq.php
+ *    http://www.libsdl.org/faq.php
  *  
  *  If you need help with the library, or just want to discuss SDL related
  *  issues, you can join the developers mailing list:
- *  	http://www.libsdl.org/mailing-list.php
+ *    http://www.libsdl.org/mailing-list.php
  *  
  *  Enjoy!
- *  	Sam Lantinga				(slouken@libsdl.org)
+ *    Sam Lantinga        (slouken@libsdl.org)
  */
 
 #ifndef _SDL_H

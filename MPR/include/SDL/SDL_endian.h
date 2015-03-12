@@ -35,8 +35,8 @@
  *  \name The two types of endianness
  */
 /*@{*/
-#define SDL_LIL_ENDIAN	1234
-#define SDL_BIG_ENDIAN	4321
+#define SDL_LIL_ENDIAN  1234
+#define SDL_BIG_ENDIAN  4321
 /*@}*/
 
 #ifndef SDL_BYTEORDER           /* Not defined in SDL_config.h? */
@@ -49,9 +49,9 @@
     (defined(__MIPS__) && defined(__MISPEB__)) || \
     defined(__ppc__) || defined(__POWERPC__) || defined(_M_PPC) || \
     defined(__sparc__)
-#define SDL_BYTEORDER	SDL_BIG_ENDIAN
+#define SDL_BYTEORDER SDL_BIG_ENDIAN
 #else
-#define SDL_BYTEORDER	SDL_LIL_ENDIAN
+#define SDL_BYTEORDER SDL_LIL_ENDIAN
 #endif
 #endif /* __linux __ */
 #endif /* !SDL_BYTEORDER */
@@ -216,23 +216,23 @@ SDL_SwapFloat(float x)
  */
 /*@{*/
 #if SDL_BYTEORDER == SDL_LIL_ENDIAN
-#define SDL_SwapLE16(X)	(X)
-#define SDL_SwapLE32(X)	(X)
-#define SDL_SwapLE64(X)	(X)
-#define SDL_SwapFloatLE(X)	(X)
-#define SDL_SwapBE16(X)	SDL_Swap16(X)
-#define SDL_SwapBE32(X)	SDL_Swap32(X)
-#define SDL_SwapBE64(X)	SDL_Swap64(X)
-#define SDL_SwapFloatBE(X)	SDL_SwapFloat(X)
+#define SDL_SwapLE16(X) (X)
+#define SDL_SwapLE32(X) (X)
+#define SDL_SwapLE64(X) (X)
+#define SDL_SwapFloatLE(X)  (X)
+#define SDL_SwapBE16(X) SDL_Swap16(X)
+#define SDL_SwapBE32(X) SDL_Swap32(X)
+#define SDL_SwapBE64(X) SDL_Swap64(X)
+#define SDL_SwapFloatBE(X)  SDL_SwapFloat(X)
 #else
-#define SDL_SwapLE16(X)	SDL_Swap16(X)
-#define SDL_SwapLE32(X)	SDL_Swap32(X)
-#define SDL_SwapLE64(X)	SDL_Swap64(X)
-#define SDL_SwapFloatLE(X)	SDL_SwapFloat(X)
-#define SDL_SwapBE16(X)	(X)
-#define SDL_SwapBE32(X)	(X)
-#define SDL_SwapBE64(X)	(X)
-#define SDL_SwapFloatBE(X)	(X)
+#define SDL_SwapLE16(X) SDL_Swap16(X)
+#define SDL_SwapLE32(X) SDL_Swap32(X)
+#define SDL_SwapLE64(X) SDL_Swap64(X)
+#define SDL_SwapFloatLE(X)  SDL_SwapFloat(X)
+#define SDL_SwapBE16(X) (X)
+#define SDL_SwapBE32(X) (X)
+#define SDL_SwapBE64(X) (X)
+#define SDL_SwapFloatBE(X)  (X)
 #endif
 /*@}*//*Swap to native*/
 

@@ -17,7 +17,7 @@ namespace Framework
 
   SDLWindowSystem::SDLWindowSystem(int width, int height) : Width_(width), Height_(height) 
   {
-	WINDOW = this;
+  WINDOW = this;
     Window_ = NULL;
   }
   SDLWindowSystem::~SDLWindowSystem()
@@ -28,13 +28,13 @@ namespace Framework
   void SDLWindowSystem::Activate()
   {
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
-	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+  SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
+  SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+  SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
+  SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
-	Window_ = SDL_CreateWindow("Jesse_Harrison-MPR", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Width_, Height_, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
-	Context_ = SDL_GL_CreateContext(Window_);
+  Window_ = SDL_CreateWindow("Jesse_Harrison-MPR", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Width_, Height_, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+  Context_ = SDL_GL_CreateContext(Window_);
 
   }
 
@@ -45,12 +45,12 @@ namespace Framework
   void SDLWindowSystem::Initialize()
   {
     SDL_Init(SDL_INIT_EVERYTHING);
-	Activate();
+  Activate();
   }
 
   void SDLWindowSystem::Update(float dt)
-  {	
-	SDL_GL_SwapWindow(Window_);
+  { 
+  SDL_GL_SwapWindow(Window_);
   }
   void SDLWindowSystem::RecieveMessage(Message* message)
   {

@@ -38,7 +38,7 @@
 #endif
 
 #ifdef __cplusplus
-#define C_LINKAGE	"C"
+#define C_LINKAGE "C"
 #else
 #define C_LINKAGE
 #endif /* __cplusplus */
@@ -59,7 +59,7 @@
  */
 
 #ifdef SDL_MAIN_NEEDED
-#define main	SDL_main
+#define main  SDL_main
 #endif
 
 /**

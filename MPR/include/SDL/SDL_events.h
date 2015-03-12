@@ -48,8 +48,8 @@ extern "C" {
 #endif
 
 /* General keyboard/mouse state definitions */
-#define SDL_RELEASED	0
-#define SDL_PRESSED	1
+#define SDL_RELEASED  0
+#define SDL_PRESSED 1
 
 /**
  * \brief The types of events that can be delivered.
@@ -286,7 +286,7 @@ typedef struct SDL_JoyButtonEvent
 typedef struct SDL_TouchFingerEvent
 {
     Uint32 type;        /**< ::SDL_FINGERMOTION OR 
-			   SDL_FINGERDOWN OR SDL_FINGERUP*/
+         SDL_FINGERDOWN OR SDL_FINGERUP*/
     Uint32 windowID;    /**< The window with mouse focus, if any */
     SDL_TouchID touchId;        /**< The touch device id */
     SDL_FingerID fingerId;
@@ -600,10 +600,10 @@ extern DECLSPEC void SDLCALL SDL_FilterEvents(SDL_EventFilter filter,
                                               void *userdata);
 
 /*@{*/
-#define SDL_QUERY	-1
-#define SDL_IGNORE	 0
-#define SDL_DISABLE	 0
-#define SDL_ENABLE	 1
+#define SDL_QUERY -1
+#define SDL_IGNORE   0
+#define SDL_DISABLE  0
+#define SDL_ENABLE   1
 
 /**
  *  This function allows you to set the state of processing certain events.

@@ -60,7 +60,7 @@ extern "C" {
 /**
  *  Evaluates to true if the surface needs to be locked before access.
  */
-#define SDL_MUSTLOCK(S)	(((S)->flags & SDL_RLEACCEL) != 0)
+#define SDL_MUSTLOCK(S) (((S)->flags & SDL_RLEACCEL) != 0)
 
 /**
  * \brief A collection of pixels used in software blitting.
@@ -174,7 +174,7 @@ extern DECLSPEC SDL_Surface *SDLCALL SDL_LoadBMP_RW(SDL_RWops * src,
  *  
  *  Convenience macro.
  */
-#define SDL_LoadBMP(file)	SDL_LoadBMP_RW(SDL_RWFromFile(file, "rb"), 1)
+#define SDL_LoadBMP(file) SDL_LoadBMP_RW(SDL_RWFromFile(file, "rb"), 1)
 
 /**
  *  Save a surface to a seekable SDL data stream (memory or file).
@@ -192,7 +192,7 @@ extern DECLSPEC int SDLCALL SDL_SaveBMP_RW
  *  Convenience macro.
  */
 #define SDL_SaveBMP(surface, file) \
-		SDL_SaveBMP_RW(surface, SDL_RWFromFile(file, "wb"), 1)
+    SDL_SaveBMP_RW(surface, SDL_RWFromFile(file, "wb"), 1)
 
 /**
  *  \brief Sets the RLE acceleration hint for a surface.

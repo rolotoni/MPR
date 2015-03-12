@@ -14,24 +14,24 @@ namespace Framework
   {
     public:
       Shaders();
-	  ~Shaders();
-	  
+    ~Shaders();
+    
       GLuint InitShaders(const char* vs_filename, const char* fs_filename);
-	  
-	  //vector of shader programs
-	  std::vector<GLuint> SPrograms;
+    
+    //vector of shader programs
+    std::vector<GLuint> SPrograms;
 
     private:
-	  int GetFileLength(const char* filename);
+    int GetFileLength(const char* filename);
       char* loadshader(const char* filename);
       int unloadshader(const char* ShaderSource);
       void CompileShader(GLint shader);
       void LinkShader(GLuint program);
-	  int fShaderObject;
+    int fShaderObject;
       int vShaderObject;
       char* fShaderSource;
       char* vShaderSource;
-	  
+    
   };
 }
 

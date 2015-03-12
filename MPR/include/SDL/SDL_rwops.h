@@ -146,9 +146,9 @@ extern DECLSPEC SDL_RWops *SDLCALL SDL_RWFromConstMem(const void *mem,
 extern DECLSPEC SDL_RWops *SDLCALL SDL_AllocRW(void);
 extern DECLSPEC void SDLCALL SDL_FreeRW(SDL_RWops * area);
 
-#define RW_SEEK_SET	0       /**< Seek from the beginning of data */
-#define RW_SEEK_CUR	1       /**< Seek relative to current read point */
-#define RW_SEEK_END	2       /**< Seek relative to the end of data */
+#define RW_SEEK_SET 0       /**< Seek from the beginning of data */
+#define RW_SEEK_CUR 1       /**< Seek relative to current read point */
+#define RW_SEEK_END 2       /**< Seek relative to the end of data */
 
 /**
  *  \name Read/write macros
@@ -156,11 +156,11 @@ extern DECLSPEC void SDLCALL SDL_FreeRW(SDL_RWops * area);
  *  Macros to easily read and write from an SDL_RWops structure.
  */
 /*@{*/
-#define SDL_RWseek(ctx, offset, whence)	(ctx)->seek(ctx, offset, whence)
-#define SDL_RWtell(ctx)			(ctx)->seek(ctx, 0, RW_SEEK_CUR)
-#define SDL_RWread(ctx, ptr, size, n)	(ctx)->read(ctx, ptr, size, n)
-#define SDL_RWwrite(ctx, ptr, size, n)	(ctx)->write(ctx, ptr, size, n)
-#define SDL_RWclose(ctx)		(ctx)->close(ctx)
+#define SDL_RWseek(ctx, offset, whence) (ctx)->seek(ctx, offset, whence)
+#define SDL_RWtell(ctx)     (ctx)->seek(ctx, 0, RW_SEEK_CUR)
+#define SDL_RWread(ctx, ptr, size, n) (ctx)->read(ctx, ptr, size, n)
+#define SDL_RWwrite(ctx, ptr, size, n)  (ctx)->write(ctx, ptr, size, n)
+#define SDL_RWclose(ctx)    (ctx)->close(ctx)
 /*@}*//*Read/write macros*/
 
 
